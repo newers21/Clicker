@@ -1,0 +1,178 @@
+body {
+    background-color: #333; /* темно-серый фон */
+    display: flex;
+    flex-direction: column; /* располагаем элементы вертикально */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff; /* белый цвет для текста цифр */
+    font-size: 24px; /* размер шрифта для цифр */
+    font-weight: bold; /* жирный шрифт для цифр */
+    font-family: 'Roboto', sans-serif; /* применяем шрифт Roboto */
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* полная высота за вычетом высоты вкладок */
+    position: relative;
+}
+
+#clickContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#coin {
+    width: 300px; /* размер монеты */
+    height: 300px; /* размер монеты */
+    background: linear-gradient(45deg, #ffd700, #f0e68c); /* градиентный цвет */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* добавляем для позиционирования абсолютных элементов внутри */
+    font-size: 72px; /* размер шрифта для большой буквы */
+    color: #333; /* цвет для большой буквы */
+    cursor: pointer;
+    user-select: none; /* предотвращает выделение текста */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* убираем подсветку при тапе (для iOS) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* добавляем плавные переходы */
+    border: 5px solid transparent; /* начальная прозрачная обводка */
+    box-shadow: 0 0 20px rgba(255, 187, 51, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.5); /* постоянное свечение и контурная обводка */
+}
+
+    #coin:active {
+        transform: scale(0.9); /* уменьшаем монету при нажатии */
+    }
+
+.big-letter {
+    font-size: 140px; /* размер большой буквы W */
+    font-weight: bold; /* жирный шрифт для большой буквы */
+}
+
+#counter {
+    margin-bottom: 20px; /* отступ снизу */
+    font-size: 90px; /* размер цифр */
+    position: absolute; /* абсолютное позиционирование */
+    top: 20px; /* отступ сверху */
+    left: 50%; /* выравнивание по центру */
+    transform: translateX(-50%); /* центрирование по горизонтали */
+}
+
+.boost-upgrade {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#boostButton {
+    padding: 15px 30px; /* отступы внутри кнопки */
+    font-size: 18px; /* размер шрифта */
+    font-weight: bold; /* жирный шрифт */
+    color: #fff; /* цвет текста */
+    background: #444; /* темно-серый фон для кнопки */
+    border: none; /* убираем границу */
+    border-radius: 10px; /* скругленные углы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* тень */
+    cursor: pointer; /* указатель мыши */
+    transition: background 0.3s ease, transform 0.2s ease; /* плавные переходы */
+    display: flex; /* для выравнивания содержимого кнопки */
+    justify-content: space-between; /* распределение элементов */
+    align-items: center; /* вертикальное выравнивание */
+    width: 80vw; /* ширина кнопки */
+    max-width: 600px; /* максимальная ширина кнопки */
+}
+
+    #boostButton:hover {
+        background: #555; /* изменяем цвет при наведении */
+    }
+
+    #boostButton:active {
+        transform: scale(0.95); /* уменьшаем кнопку при нажатии */
+    }
+
+.boost-icon {
+    font-size: 24px; /* размер иконки */
+    margin-right: 10px; /* отступ справа */
+}
+
+.boost-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* выравнивание по левому краю */
+    flex-grow: 1; /* заполнение доступного пространства */
+}
+
+.boost-name {
+    font-size: 20px; /* размер шрифта для названия апгрейда */
+    font-weight: bold; /* жирный шрифт для названия апгрейда */
+}
+
+.boost-details {
+    display: flex;
+    align-items: center;
+    margin-top: 5px; /* отступ сверху */
+}
+
+.boost-cost {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* отступ справа */
+}
+
+.boost-level {
+    font-size: 16px; /* размер шрифта для уровня */
+}
+
+.coin-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px; /* отступ справа от иконки */
+}
+
+.boost-arrow {
+    font-size: 24px; /* размер стрелки */
+    margin-left: 10px; /* отступ слева */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #222; /* темный цвет для фона вкладок */
+    padding: 10px 0;
+}
+
+.tab {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .tab:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* полупрозрачный белый при наведении */
+    }
+
+    .tab.active {
+        background-color: rgba(255, 255, 255, 0.1); /* активная вкладка */
+    }

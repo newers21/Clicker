@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="clickContainer">
+            <div id="counter">0</div>
+            <div id="coin">
+                <div class="big-letter">W</div>
+            </div>
+        </div>
+        <div id="boostContainer" class="hidden">
+            <div class="boost-upgrade">
+                <button id="boostButton" onclick="upgradeClick()">
+                    <div class="boost-icon">🖐️</div>
+                    <div class="boost-info">
+                        <div class="boost-name">Multitap</div>
+                        <div class="boost-details">
+                            <div class="boost-cost">
+                                <div class="coin-icon">💰</div>
+                                <span id="boostCost">500</span>
+                            </div>
+                            <div class="boost-level">• <span id="boostLevel">1</span> lvl</div>
+                        </div>
+                    </div>
+                    <div class="boost-arrow">➡️</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab active" id="clickTab" onclick="switchTab('click')">Click</button>
+        <button class="tab" id="boostTab" onclick="switchTab('boost')">Boost</button>
+        <button class="tab" id="earnTab" onclick="switchTab('earn')">Earn</button>
+        <button class="tab" id="referalTab" onclick="switchTab('referal')">Referal</button>
+        <button class="tab" id="statsTab" onclick="switchTab('stats')">Stats</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
